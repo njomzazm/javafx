@@ -1,5 +1,5 @@
-
 import javax.swing.JOptionPane;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -33,12 +33,15 @@ public class Aufgabe1JavaFX extends Application{
 		Scene scene = new Scene (fp,400,300);
 		st.setScene(scene);
 		
+		//Label: Überschrift des Textfelds
 		Label label = new Label("30 Zeichen:");
 		TextField textfield = new TextField();
 		
+		//Buttons erstellen
 		Button button1 = new Button("Button 1");
 		Button button2 = new Button("Button 2");
 		
+		//Was soll bei Ausführung der Buttons passieren?
 		button1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e ) {
 				JOptionPane.showMessageDialog(null,textfield.getText().length());
@@ -49,15 +52,15 @@ public class Aufgabe1JavaFX extends Application{
 			public void handle(ActionEvent e ) {
 				StringBuilder sb = new StringBuilder();
 				JOptionPane.showMessageDialog(null, sb.append(textfield.getText()).reverse().toString());
-
 			}
 		});
 		
+		//Größe des Fensters einstellen
 		st.setWidth(400);
 		st.setHeight(300);
+		//Komponenten hinzufügen
 		fp.getChildren().addAll(textfield,label,button1,button2);
 		st.show();
 	
-		
 	}
 }
